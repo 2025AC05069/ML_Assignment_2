@@ -13,8 +13,8 @@ Credit card default prediction is a critical challenge in the financial services
   * **Previous Payment Amounts:** `PAY_AMT1` to `PAY_AMT6` (Monthly amounts paid).
 
 ## c. Github Repository Link
-- **GitHub Repository Link:** [Insert your GitHub Repository URL here]
-- **Live Streamlit App Link:** [Insert your Live Streamlit App URL here]
+- **GitHub Repository Link:** https://github.com/2025AC05069/ML_Assignment_2
+- **Live Streamlit App Link:** https://mlassignment2-ks2lqwcnlhwy75oy69t22m.streamlit.app/#dataset-preview
 
 ## d. Models Used
 
