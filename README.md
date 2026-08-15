@@ -1,9 +1,5 @@
-# Credit Card Default Classification Project
-
 ## a. Problem Statement
 Credit card default prediction is a critical challenge in the financial services sector. Predicting whether a customer will default on their credit card payment in the upcoming cycle helps financial institutions mitigate credit risk, optimize credit limits, and implement targeted interventions for high-risk accounts. This project develops, evaluates, and deploys multiple machine learning classification models to accurately predict client default status based on demographic data and historical payment records.
-
----
 
 ## b. Dataset Description
 - **Dataset Name:** Default of Credit Card Clients Dataset (UCI / OpenML)
@@ -16,41 +12,29 @@ Credit card default prediction is a critical challenge in the financial services
   * **Bill Statement Amounts:** `BILL_AMT1` to `BILL_AMT6` (Monthly statement balances).
   * **Previous Payment Amounts:** `PAY_AMT1` to `PAY_AMT6` (Monthly amounts paid).
 
----
+## c. Github Repository Link
+- **GitHub Repository Link:** [Insert your GitHub Repository URL here]
+- **Live Streamlit App Link:** [Insert your Live Streamlit App URL here]
 
-## c. GitHub Repository Link
-- **GitHub Repository:** https://github.com/2025AC05069/ML_Assignment_2
-- **Live Streamlit App:** https://mlassignment2-ks2lqwcnlhwy75oy69t22m.streamlit.app
+## d. Models Used
 
----
-
-## d. Models Used & Performance Evaluation
-
-All 5 classification models were trained using standard 80-20 stratified train-test splits with standard scaling applied across features.
-
-### Comparison Table
+All models were evaluated on the same test dataset using standard scaling. Below is the performance comparison across all mandatory metrics.
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Logistic Regression** | 0.8088 | 0.7248 | 0.6852 | 0.2374 | 0.3525 | 0.3341 |
-| **Decision Tree** | 0.7265 | 0.6136 | 0.3842 | 0.4122 | 0.3977 | 0.2079 |
-| **kNN** | 0.7938 | 0.7029 | 0.5484 | 0.3376 | 0.4178 | 0.3168 |
-| **Naive Bayes** | 0.7602 | 0.7391 | 0.4632 | 0.5735 | 0.5125 | 0.3647 |
-| **Random Forest (Ensemble)** | 0.8163 | 0.7634 | 0.6514 | 0.3647 | 0.4674 | 0.3962 |
+| **Logistic Regression** | 0.8077 | 0.7076 | 0.6868 | 0.2396 | 0.3553 | 0.3244 |
+| **Decision Tree** | 0.7152 | 0.6079 | 0.3704 | 0.4115 | 0.3899 | 0.2052 |
+| **kNN** | 0.7928 | 0.7014 | 0.5487 | 0.3564 | 0.4322 | 0.3233 |
+| **Naive Bayes** | 0.7525 | 0.7249 | 0.4515 | 0.5539 | 0.4975 | 0.3386 |
+| **Random Forest (Ensemble)** | 0.8158 | 0.7718 | 0.6550 | 0.3534 | 0.4591 | 0.3848 |
 
-*(Note: Verify and update the exact decimals if your Colab run produced slight variations).*
-
----
-
-## Observations on Model Performance
+### Observations on Model Performance
 
 | ML Model Name | Observation about model performance |
 | :--- | :--- |
-| **Logistic Regression** | Demonstrates solid baseline accuracy (80.88%) and high precision (68.52%), but suffers from low recall (23.74%) due to class imbalance, missing several actual defaulters. |
-| **Decision Tree** | Shows the lowest overall accuracy and AUC (0.6136). Unpruned trees tend to overfit high-variance training features, leading to higher false positive rates on unseen test data. |
-| **kNN** | Yields reasonable performance after feature standardization, but suffers from computational latency during test inference and fails to form optimal decision boundaries across 23 dimensions. |
-| **Naive Bayes** | Delivers the highest Recall score (57.35%) among all standalone models, capturing the highest proportion of true defaulters, though precision drops due to the feature independence assumption. |
-| **Random Forest (Ensemble)** | Outperforms all individual models with the highest overall Accuracy (81.63%), highest AUC (0.7634), and highest Matthews Correlation Coefficient (0.3962), demonstrating superior generalization. |
-
-### Overall Winner for the Dataset
-**Random Forest Classifier (Ensemble)** is the clear overall winner. It effectively handles feature interactions, reduces variance through bagging, and achieves the best balance between precision and recall while leading in overall Accuracy, AUC, and MCC.
+| **Logistic Regression** | Achieves strong overall accuracy (0.8077) and the highest precision (0.6868) among standalone models, but struggles significantly with recall (0.2396), meaning it misses many actual defaulters. |
+| **Decision Tree** | Records the lowest overall performance across Accuracy (0.7152), AUC (0.6079), and MCC (0.2052). The model likely overfits the complex features, resulting in poor generalization on test data. |
+| **kNN** | Delivers solid baseline accuracy (0.7928) and moderate precision (0.5487), providing a balanced but unremarkable predictive capability across the 23 scaled dimensions. |
+| **Naive Bayes** | Yields the highest Recall (0.5539) and the highest F1 Score (0.4975) of all models. It is the best at identifying true defaulters, though it sacrifices precision (0.4515) to do so. |
+| **Random Forest (Ensemble)** | Achieves the highest Accuracy (0.8158), highest AUC (0.7718), and highest MCC (0.3848). By utilizing multiple constrained decision trees, it successfully reduces overfitting and provides the most robust overall predictions. |
+| **Overall Winner for the dataset?** | **Random Forest (Ensemble)** is the overall winner. It provides the best balance of generalization capability, leading in Accuracy, AUC, and MCC, making it the most reliable model for this dataset. |
