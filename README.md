@@ -38,3 +38,4 @@ All models were evaluated on the same test dataset using standard scaling. Below
 | **Naive Bayes** | Yields the highest Recall (0.5539) and the highest F1 Score (0.4975) of all models. It is the best at identifying true defaulters, though it sacrifices precision (0.4515) to do so. |
 | **Random Forest (Ensemble)** | Achieves the highest Accuracy (0.8158), highest AUC (0.7718), and highest MCC (0.3848). By utilizing multiple constrained decision trees, it successfully reduces overfitting and provides the most robust overall predictions. |
 | **Overall Winner for the dataset?** | **Random Forest (Ensemble)** is the overall winner. It provides the best balance of generalization capability, leading in Accuracy, AUC, and MCC, making it the most reliable model for this dataset. |
+
